@@ -1,4 +1,4 @@
---[[_G.love = love
+_G.love = love
 
 local stateManager
 local keyboardInput 
@@ -39,5 +39,3 @@ function love.draw()
     stateManager:draw()
 
 end
-
-]]--
