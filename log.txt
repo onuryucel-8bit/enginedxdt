@@ -7,9 +7,6 @@ Proje:
   \-newton   V0_0_1
 _________________________________
 
-*ay icinde yenilik eklendiyse ay başı bir kere (x++)
-*yeni dosya eklenirse  (y++)
-*fonksiyon güncellemsi (z++)
 _________________________________
 
 02.02.23 tile(Manager,Loader) eklendi
