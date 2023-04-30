@@ -10,23 +10,44 @@ function TileLoader.new()
 end
 
 --txt dosyasindaki haritayi 2 boyutlu diziye atar
-function TileLoader:load(path)
-    local rowTiles = {}
+function TileLoader:load_toTable(path)
+
+    if path == nil or not (type(path) == "string") then
+        error("TileLoader:load_toTable() path is nil or not string")
+    end
 
     local file = io.open(path,"r")
+    
     if file == nil then
-        error("ERROR : TileLoader.lua ln 18 => file not found ")
+        error("ERROR : TileLoader.lua ln 18 => file not found (file nil)")
     end
 
-    local mapWidth  = file:read("l")
-    local mapHeight = file:read("l")
+    
+    local mapData  = file:read("l")
+
+    local mapWidth = tonumber(string.sub(mapData,1,1))
+    local mapHeight = tonumber(string.sub(mapData,3,3))
 
     for i = 1, mapHeight, 1 do
+        --satir bilgisini al
+        local rowData = file:read("l")
         
-        print(file:read("l"))
         
+        --satir bilgisini parcalanir        
+        local index = 1
+        local rowTiles = {}
+
+        for j = 1, mapWidth, 1 do
+                                
+            rowTiles[j] = tonumber(string.sub(rowData,index,index))
+            index = index + 2
+
+        end
+        
+        table.insert(self.tilemap,rowTiles)
     end
 
+    file:close()
 end
 
 
