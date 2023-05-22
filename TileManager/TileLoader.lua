@@ -25,9 +25,18 @@ function TileLoader:load_toTable(path)
     
     local mapData  = file:read("l")
 
-    local mapWidth = tonumber(string.sub(mapData,1,1))
-    local mapHeight = tonumber(string.sub(mapData,3,3))
-
+    local mapWidth
+    local mapHeight
+    
+    for i = 1,#mapData,1 do
+        if string.sub(mapData,i,i) == " " then
+            mapWidth = string.sub(mapData,1,i)
+            mapHeight = string.sub(mapData,i+1,#mapData)
+            
+            break
+        end
+    end
+    
     for i = 1, mapHeight, 1 do
         --satir bilgisini al
         local rowData = file:read("l")
