@@ -1,4 +1,3 @@
---versiyon güncellme kurallari--
 ====Vx_y_z====
 
 Proje: 
