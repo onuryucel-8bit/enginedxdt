@@ -8,6 +8,10 @@ _________________________________
 
 _________________________________
 
+10.02.23
+  V1_1_17
+  dosya yapisi degisikligi
+
 02.02.23 tile(Manager,Loader) eklendi
  V0_1_16
  fonksiyonlarin ici suanlik bos
